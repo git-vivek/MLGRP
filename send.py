@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import socket                   
 
 port = 5656
@@ -24,5 +25,5 @@ while True:
     f.close()
 
     print('Done sending')
-    conn.send('Thank you for connecting')
+    #conn.send('Thank you for connecting')
     conn.close()
