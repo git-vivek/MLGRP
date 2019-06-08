@@ -3,7 +3,7 @@ import socket
 
 s = socket.socket()         
 host = socket.gethostname()     
-port = 5656                    
+port = 8888                    
 
 s.connect((host, port))
 
@@ -13,13 +13,16 @@ with open('received_file', 'wb') as f:
     while True:
         print('receiving data...')
         data=s.recv(1024)
-        print('data=%s',(data))
+        b=data.decode()
+        print('data=%s',(b))
+        
         if not data:
             break
         
-        f.write(data)
+        f.write(b)
+        print("successful")
 
 f.close()
-print('Successfully get the file')
+#print('Successfully get the file')
 s.close()
 print('connection closed')
