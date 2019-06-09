@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import socket
+import os
 ip='127.0.0.1'
 port=8888
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -11,6 +12,8 @@ for i in range(1) :
     f=open('next','w+')
     f.write(cont)
     print("File received")
+    os.system("tar -cvzf next.tar.gz next")
+    print("File compressed in gzip format")
     #print(enc)
     #new=enc.decode()
     #f=open('new','w+')
